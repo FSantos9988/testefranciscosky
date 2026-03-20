@@ -20,3 +20,50 @@ Salve as alterações e rode a aplicação. O sistema valida a existência e pre
 ## Passos para executar
   1. Preencha o arquivo **config.ini**;
   2. Rode a aplicação;
+  
+## Lista de requisitos atendidos/implementados
+  [X] = IMPLEMENTADO/ATENDIDO    [] = NÃO IMPLEMENTADO/ATENDIDO
+  
+  - Criação das Entidades:
+    [X] Cliente;
+	[X] OrdemServico;
+	[X] ItemOrdem;
+	[] StatusLog;
+  - CRUD Completo:
+    [X] Incluir / Editar / Excluir / Listar para Cliente e 
+    Ordem de Serviço (itens incluídos na mesma tela ou em aba / grid filho);
+	[X] Recalcular ValorTotal da OS (soma de itens) automaticamente;
+	:
+    [X] Filtro multi-critério: por intervalo de datas (abertura), Status, Cliente (nome
+    parte), ValorTotal (>= / <= opcional);
+	[] Paginação ou pelo menos limitação configurável (ex.: TOP/N FIRST) ou lazy
+    load se implementado (opcional);
+	
+  - Relatório:
+    [X] Relatório de Ordens de Serviço filtrável pelos mesmos campos acima;
+	   -> Deve conter: total de OS por status, soma de valores (agrupamentos);
+	[X] Exportar para PDF ou Excel / CSV (ou ambos). Se não suportar diretamente no
+    componente, justificar;
+	
+  - Funcionalidade NÃO-CRUD (Obrigatória – escolha a implementação principal)
+    Implementar obrigatoriamente: Cálculo de SLA / Atraso:
+    [] SLA: considerar DataPrevista. Se DataAtual > DataPrevista e Status não for
+    Concluída/Cancelada → OS em atraso;
+    [X] Mostrar destaque visual (cor / ícone) nas OS atrasadas COR!!!;
+    [X] Exibir contador (dashboard simples) no topo: Total Abertas, Em Andamento,
+    Concluídas, Em Atraso;
+	
+  - Funcionalidades Opcionais (Escolher 0 a 2 – valem bônus):
+    [] (A) Histórico/Auditoria de Status (tabela StatusLog com DataHora, StatusAnterior,
+    StatusNovo, UsuarioSimulado);
+    [X] (B) Exportação e Importação de Clientes via CSV (com validação e relatório de erros);
+	Obs.: Optou-se por importar e exportar em .XLS(X) por se tratar de uma estrutura mais robusta de arquivos;
+	[] (C) Job Simulado: botão “Processar Atrasos” que recalcula campo DiasAtraso e atualiza;
+    indicador (transação explícita);
+	[] (D) Mini Dashboard Gráfico (se usar Delphi 10.x) com barras por Status;
+	[] (E) Notas Técnicas com Rich Text / HTML gravadas em tabela associada;
+	
+  - Extras (Se quiser ir além sem custo alto):
+    [] Barra de progresso ao gerar relatório grande;
+    [X] Atalhos de teclado (F2 editar, INS novo, DEL excluir);
+	[] Validação de campos obrigatórios com destaque visual;
