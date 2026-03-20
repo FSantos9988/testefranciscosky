@@ -1,0 +1,51 @@
+# Compiled files
+*.exe
+*.dll
+*.bpl
+*.dcu
+*.dcpil
+*.~*
+*.bak
+*.dsk
+*.local
+*.identcache
+*.tvsconfig
+*.todo
+*.err
+*.log
+*.stat
+*.obj
+*.hpp
+*.res
+*.rsm
+*.tds
+*.map
+*.pdb
+*.idb
+*.ilk
+
+# Delphi generated
+__history/
+__recovery/
+ModelSupport/
+Win32/
+Win64/
+*.dproj.local
+*.groupproj.local
+*.dproj.old
+*.groupproj.old
+
+# Packages
+*.dcp
+*.bpl
+
+# Version control
+.git/
+.svn/
+*.scc
+
+# IDE specific
+*.dsk
+*.tvsconfig
+*.identcache
+*.local
